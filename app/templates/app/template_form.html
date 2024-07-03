@@ -19,10 +19,10 @@
 					<h4 class="text-center mb-4">
 						Заголовок вашей формы
 					</h4>
-					<form method="post">
+					<form action="" method="post">
                         {% csrf_token %}
 						<!-- Запишите здесь тег {% csrf_token %} -->
-
+						<!-- Поле для имени -->
                         <label for="my_text">Введи своё имя</label>  <!--for="my_text" это привязка к объекту с id="my_text", id - всегда должен быть уникален во всем HTML документе-->
                         <div class="form-input">  <!-- Блок для оборачивания строки формы -->
                             <span><i class="fa fa-id-card"></i></span>  <!-- Fontawesom картинка в строке ввода-->
@@ -41,22 +41,39 @@
                         <!-- Многострочное поле -->
                         <label for="my_textarea">Расскажи о себе</label>
                         <div class="form-input">
-                            <textarea id="my_textarea" name="my_textarea" rows="10" placeholder="Начни писать здесь" required></textarea>
+                            <textarea id="my_textarea" name="my_textarea" rows="10" placeholder="Начни писать здесь"></textarea>
                         </div>
+						<!-- Сформируйте и заполните нужные строки ввода (оберните их <div class="form-input"> как показано выше. Это нужно чтобы были одинаковые стили)-->
 
-                        <!-- Добавьте своих полей --------------------------------------------------------------------->
-                        <!-- Сформируйте и заполните нужные строки ввода (оберните их <div class="form-input"> как показано выше. Это нужно чтобы были одинаковые стили)-->
+						<!-- Поле для email -->
+						<label for="my_email">Введи свой E-mail</label>
+						<div class="form-input">  <!-- Блок для оборачивания строки формы -->
+                            <span><i class="fa fa-envelope-open"></i></span>  <!-- Fontawesom картинка в строке ввода-->
+							<input type="email" id="my_email" name="my_email" placeholder="example@mail.ru" required>  <!-- Строка ввода-->
+						</div>
+						<!-- Поле для пароля -->
+						<label for="my_pass">Введи свой пароль</label>
+						<div class="form-input">  <!-- Блок для оборачивания строки формы -->
+                            <span><i class="fa fa-key"></i></span>  <!-- Fontawesom картинка в строке ввода-->
+							<input type="password" id="my_pass" name="my_pass" placeholder="Введи пароль">  <!-- Строка ввода-->
+						</div>
+						<!-- Поле для даты -->
+						<label for="my_date">Введи дату</label>
+						<div class="form-input">  <!-- Блок для оборачивания строки формы -->
+                            <span><i class="fa fa-calendar"></i></span>  <!-- Fontawesom картинка в строке ввода-->
+							<input type="date" id="my_date" name="my_date">  <!-- Строка ввода-->
+						</div>
+						<!-- Поле для числа -->
+						<label for="my_number">Введи целое число</label>
+						<div class="form-input">  <!-- Блок для оборачивания строки формы -->
+							<input type="number" id="my_number" name="my_number" placeholder="Целое число">  <!-- Строка ввода-->
+						</div>
+						<!-- Поле для переключателя -->
+						<label for="my_checkbox">Отметь, если согласен</label>
+						<div class="form-input">  <!-- Блок для оборачивания строки формы -->
+							<input type="checkbox" id="my_checkbox" name="my_checkbox" width="10">  <!-- Строка ввода-->
+						</div>
 
-                        <!---- Добавьте еще поле для ввода email (придумайте текст для label)---->
-
-                        <!---- Добавьте еще поле для ввода пароля (придумайте текст для label)---->
-
-                        <!---- Добавьте еще поле для ввода даты (придумайте текст для label)---->
-
-                        <!---- Добавьте еще поле для ввода целого значения (придумайте текст для label)---->
-
-                        <!---- Добавьте еще поле для переключателя checkbox (придумайте текст для label)---->
-                        <!--------------------------------------------------------------------------------------------->
 
                         <!-- В форме всегда присутствует кнопка чтобы что-то отправить. Кнопку не изменять! -->
 						<div class="mb-3"> 

@@ -13,12 +13,15 @@ def template_view(request):
     if request.method == "POST":
         received_data = request.POST  # Приняли данные в словарь
 
-        # как пример получение данных по ключу `my_text`
-        # my_text = received_data.get('my_text')
+        form_field = ['my_text', 'my_select', 'my_email']
+        form_dict = dict()
+        for field in form_field:
+            form_dict[field] = received_data.get(field)
 
         # TODO Проведите здесь получение и обработку данных если это необходимо
 
         # TODO Верните HttpRequest или JsonResponse с данными
+        return JsonResponse(form_dict, json_dumps_params={'indent': 4, 'ensure_ascii': False})
 
 
 def login_view(request):

@@ -12,11 +12,12 @@ def template_view(request):
 
     if request.method == "POST":
         received_data = request.POST  # Приняли данные в словарь
-
-        form_field = ['my_text', 'my_select', 'my_email']
         form_dict = dict()
-        for field_name in form_field:
-            form_dict[field_name] = received_data.get(field_name)
+        form_field = ['my_text', 'my_select', 'my_email']
+        form_dict = {field_name: received_data.get(field_name) for field_name in form_field}
+
+        # for field_name in form_field:
+        #     form_dict[field_name] = received_data.get(field_name)
 
         # TODO Проведите здесь получение и обработку данных если это необходимо
 

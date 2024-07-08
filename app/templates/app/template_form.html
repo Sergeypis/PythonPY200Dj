@@ -74,7 +74,11 @@
 							<input type="checkbox" id="my_checkbox" name="my_checkbox" width="10">  <!-- Строка ввода-->
 						</div>
 
-
+						{% if form.errors %}
+    						<div class="mb-3 d-flex align-items-center">
+        						<span style="color: red; font-size: 16px">{{ form.errors }}</span>
+    						</div>
+						{% endif %}
                         <!-- В форме всегда присутствует кнопка чтобы что-то отправить. Кнопку не изменять! -->
 						<div class="mb-3"> 
 							<button type="submit" class="btn btn-block">

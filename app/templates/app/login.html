@@ -40,9 +40,18 @@
 							</div>
 						</div>
 
-                        <div class="mb-3 d-flex align-items-center">
-                            <span style="color: red; font-size: 16px">{{ error }}</span>
-                        </div>
+<!--                        <div class="mb-3 d-flex align-items-center">-->
+<!--                            <span style="color: red; font-size: 16px">{{ error }}</span>-->
+<!--                        </div>-->
+						<div class="mb-3 d-flex align-items-center">
+							<ul style="color: red; font-size: 16px">
+							{% for field, errors in form.errors.items %}
+								{% for error in errors %}
+									<li>{{ field }}: {{ error }}</li>
+								{% endfor %}
+							{% endfor %}
+							</ul>
+						</div>
 
 						<div class="mb-3"> 
 							<button type="submit" class="btn btn-block">

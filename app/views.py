@@ -74,7 +74,7 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST) # с валидацией email при помощи jango
         if form.is_valid():
             user = form.save()  # Возвращает сохраненного пользователя из данных формы
-            login(request, user)
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')  # Авторизируем пользователя
             return redirect("app:user_profile")
 
         return render(request, 'app/register.html', context={"form": form})
@@ -90,6 +90,7 @@ def index_view(request):
 def user_detail_view(request):
     if request.method == "GET":
         return render(request, 'app/user_details.html')
+
 
 def get_text_json(request):
     if request.method == "GET":

@@ -48,8 +48,8 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_REDIRECT_URL = '/profile/' # Чтобы после авторизации перенаправлялось на страницу пользователя
 
-SOCIAL_AUTH_GITHUB_KEY = ''
-SOCIAL_AUTH_GITHUB_SECRET = ''
+SOCIAL_AUTH_GITHUB_KEY = 'Ov23lipwxVbzMWwXDnvB'
+SOCIAL_AUTH_GITHUB_SECRET = 'a7e16538fde2d0797d1f28eb7e92438e5e7b5380'
 SOCIAL_AUTH_GITHUB_SCOPE = ['user:email', 'read:user']
 
 MIDDLEWARE = [

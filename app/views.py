@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import TemplateForm, CustomUserCreationForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.views import View
 
 
 def template_view(request):

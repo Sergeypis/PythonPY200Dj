@@ -46,7 +46,6 @@ class MyTemplView(TemplateView):
         return self.render_to_response(context)  # Возвращаем вызов метода render_to_response
 
 
-
 class TemplView(View):
     def get(self, request):
         # TODO скопируйте код, что есть в template_view в теле условия request.method == "GET"

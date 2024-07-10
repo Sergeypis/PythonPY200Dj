@@ -11,7 +11,6 @@ from django.views.generic import FormView
 from django.contrib.auth.views import LoginView
 
 
-
 class MyFormView(FormView):
     template_name = 'app/template_form.html'  # Шаблон который будет рендерится
     form_class = TemplateForm  # Класс формы который будет валидироваться

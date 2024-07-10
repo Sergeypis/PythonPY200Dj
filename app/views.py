@@ -7,6 +7,18 @@ from .forms import TemplateForm, CustomUserCreationForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.views import View
 from django.views.generic import TemplateView
+from django.views.generic import FormView
+from django.contrib.auth.views import LoginView
+
+
+
+class MyFormView(FormView):
+    template_name = 'app/template_form.html'  # Шаблон который будет рендерится
+    form_class = TemplateForm  # Класс формы который будет валидироваться
+    success_url = '/'  # Ссылка для перехода при удачной валидации
+
+    def form_valid(self, form):
+        return JsonResponse(form.cleaned_data)
 
 
 class MyTemplView(TemplateView):
@@ -89,6 +101,13 @@ def template_view(request):
         # TODO Верните HttpRequest или JsonResponse с данными
         # return JsonResponse(form_dict, json_dumps_params={'indent': 4, 'ensure_ascii': False})
         return render(request, 'app/template_form.html', context={"form": form})
+
+
+class MyLoginView(LoginView):
+    template_name = 'app/login.html'
+    redirect_authenticated_user = True  # Данный флаг не позволит авторизированному
+    # пользователю зайти на страницу с авторизацией и сразу его перенаправит на
+    # ссылку редиректа. По умолчанию redirect_authenticated_user = False
 
 
 def login_view(request):
